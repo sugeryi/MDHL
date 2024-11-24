@@ -1,0 +1,36 @@
+BCovTest1.mxPBF         One-Sample Covariance Test using Maximum
+                        Pairwise Bayes Factor
+BDiagTest1.mxPBF        One-Sample Diagonality Test by Maximum Pairwise
+                        Bayes Factor
+CovDist                 Compute Pairwise Distance for Symmetric
+                        Positive-Definite Matrices
+CovEst.2003LW           Covariance Estimation with Linear Shrinkage
+CovEst.2010OAS          Oracle Approximating Shrinkage Estimator
+CovEst.2010RBLW         Rao-Blackwell Ledoit-Wolf Estimator
+CovEst.adaptive         Covariance Estimation via Adaptive Thresholding
+CovEst.hard             Covariance Estimation via Hard Thresholding
+CovEst.hardPD           Covariance Estimation via Hard Thresholding
+                        under Positive-Definiteness Constraint
+CovEst.nearPD           Covariance Estimation via Nearest
+                        Positive-Definite Matrix Projection
+CovEst.soft             Covariance Estimation via Soft Thresholding
+CovMean                 Estimate Mean Covariance Matrix
+CovTest1.2013Cai        One-Sample Covariance Test by Cai and Ma (2013)
+CovTest1.2014Srivastava
+                        One-Sample Covariance Test by Srivastava,
+                        Yanagihara, and Kubokawa (2014)
+CovTest2.2013Cai        Two-Sample Covariance Test by Cai and Ma (2013)
+DiagTest1.2011Cai       One-Sample Diagonality Test by Cai and Jiang
+                        (2011)
+DiagTest1.2015Lan       One-Sample Diagonality Test by Lan et al.
+                        (2015)
+PreEst.2014An           Banded Precision Matrix Estimation via
+                        Bandwidth Test
+PreEst.2014Banerjee     Bayesian Estimation of a Banded Precision
+                        Matrix (Banerjee 2014)
+PreEst.2017Lee          Bayesian Estimation of a Banded Precision
+                        Matrix (Lee 2017)
+PreEst.glasso           Precision Matrix Estimation via Graphical Lasso
+package-CovTools        A Collection of Geometric and Statistical Tools
+                        for Covariance (and Precision) Analysis
+samplecovs              Generate Sample Covariances of 2 groups

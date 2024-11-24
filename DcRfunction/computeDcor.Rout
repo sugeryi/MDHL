@@ -1,0 +1,55 @@
+
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> 
+> library(R.matlab)
+R.matlab v3.7.0 (2022-08-25 21:52:34 UTC) successfully loaded. See ?R.matlab for help.
+
+Attaching package: 'R.matlab'
+
+The following objects are masked from 'package:base':
+
+    getOption, isOpen
+
+> library(energy)
+> #library(Ball)
+> 
+> 
+> Xk = readMat("./DataGen4_250_3/SPDXdistMetri4_alarm_250.mat")
+> data = Xk$CS
+> p = dim(data)[3]
+> CC = matrix(rep(0,p*p),p,p)
+> for (i in (1:(p-1))){
++   for(j in ((i+1):p)){
++     dx = data[,,i]
++     dy = data[,,j]
++     CC[i,j] = dcor(dx, dy)
++     #CC[i,j] = bcor(dx, dy)
++     CC[j,i] = CC[i,j]
++   }
++ }
+> 
+> writeMat("./DataGen4_250_3/dcorMatrix4_alarm_250.mat",dcorMatrix4_alarm_250=CC)
+> 
+> 
+> proc.time()
+   user  system elapsed 
+   2.12    0.93    3.65 

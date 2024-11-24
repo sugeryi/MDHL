@@ -1,0 +1,62 @@
+
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> library(clusterGeneration)
+Loading required package: MASS
+Warning message:
+package 'clusterGeneration' was built under R version 4.2.3 
+> library(R.matlab)
+R.matlab v3.7.0 (2022-08-25 21:52:34 UTC) successfully loaded. See ?R.matlab for help.
+
+Attaching package: 'R.matlab'
+
+The following objects are masked from 'package:base':
+
+    getOption, isOpen
+
+Warning message:
+package 'R.matlab' was built under R version 4.2.3 
+> size = readMat("./ChainData/GenData1000/spd1size.mat")
+> size = size$nSamples
+> generate_batch_spd <- function(param, p = 2)
++ {
++   sampled_spd <- sapply(param, function(x) {
++     clusterGeneration::genPositiveDefMat(dim = p, "eigen", lambdaLow = x[1],
++                                          ratioLambda = x[2])[["Sigma"]]
++   }, simplify = "array")
++   symApply <- apply(sampled_spd, 3, Matrix::isSymmetric, 
++                     tol = sqrt(.Machine$double.eps))
++   if (all(symApply)) {
++   } else {
++     sampled_spd <- sapply(param, function(x) {
++       clusterGeneration::genPositiveDefMat(dim = p, "eigen", lambdaLow = 1,
++                                            ratioLambda = 10)[["Sigma"]]
++     }, simplify = "array")
++   }
++   sampled_spd
++ }
+> eigenvalue <- data.frame(t(data.frame(rep(1, size), rep(10, size))))
+> spddata <- generate_batch_spd(eigenvalue)
+> writeMat("./ChainData/GenData1000/SPDdata1.mat",spddata=spddata)
+> 
+> proc.time()
+   user  system elapsed 
+   0.85    0.15    2.37 

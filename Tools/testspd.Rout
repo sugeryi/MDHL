@@ -1,0 +1,68 @@
+
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> 
+> library(R.matlab)
+R.matlab v3.7.0 (2022-08-25 21:52:34 UTC) successfully loaded. See ?R.matlab for help.
+
+Attaching package: 'R.matlab'
+
+The following objects are masked from 'package:base':
+
+    getOption, isOpen
+
+Warning message:
+package 'R.matlab' was built under R version 4.2.3 
+> library(Ball)
+Warning message:
+package 'Ball' was built under R version 4.2.3 
+> 
+> Xk = readMat("./ChainData/GenData100/SpdChain100DataOrign.mat")
+> data = Xk$CS
+> p = length(data)
+> CC = matrix(rep(0,p*p),p,p)
+> for (i in (1:(p-1))){
++   for(j in ((i+1):p)){
++     dx = CovTools::CovDist(data[[i]][[1]])
++     dy = CovTools::CovDist(data[[j]][[1]])
++     CC[i,j] = bcov.test(x=dx,y=dy,num.permutations=99,distance=TRUE)$p.value
++     # CC[i,j] = dcov.test(x=dx,y=dy,num.permutations=99)$p.value
++   }
++ }
+> # p = ncol(data)/3
+> # CC = matrix(rep(0,p*p),p,p)
+> # # CC[1,8] = bcov.test(x=data[,1],y=data[,8])$p.value
+> # for (i in (1:(p-1))){
+> #   for (j in ((i+1):p)){
+> #     dx = nhdist(data[,c(3*i-2,3*i-1,3*i)],method="geodesic")
+> #     dy = nhdist(data[,c(3*j-2,3*j-1,3*j)],method="geodesic")
+> #     CC[i,j] = bcov.test(x=dx,y=dy,num.permutations=99,distance=TRUE)$p.value
+> #   }
+> # }
+> # writeMat("D:/program/matlab/spddag20.mat",ManifoldCC=CC)
+> # writeMat("D:/program/matlab/alarmSPD.mat",ManifoldCC=CC)
+> # writeMat("E:/causal-learn-zy/NEHL-main/Data/pvalMatrix1.mat",pvalMatrix1=CC)
+> writeMat("./ChainData/GenData100/pvalMatrixOrign.mat",pvalMatrix1=CC)
+> 
+> 
+> proc.time()
+   user  system elapsed 
+   5.89    0.20    6.07 

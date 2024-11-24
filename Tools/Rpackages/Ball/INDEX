@@ -1,0 +1,15 @@
+ArcticLake              Arctic lake sediment samples of different water
+                        depth
+bcor                    Ball Covariance and Correlation Statistics
+bcorsis                 Ball Correlation based Sure Independence
+                        Screening (BCor-SIS)
+bcov.test               Ball Covariance Test
+bd                      Ball Divergence statistic
+bd.test                 Ball Divergence based Equality of Distributions
+                        Test
+bdvmf                   Simulated von Mises-Fisher Data
+genlung                 Lung cancer genomic data
+macaques                Male and Female macaque data
+meteorology             meteorological data
+nhdist                  Distance Matrix Computation for Non-Hilbert
+                        Data

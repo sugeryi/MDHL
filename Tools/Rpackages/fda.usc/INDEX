@@ -1,0 +1,168 @@
+CV.S                    The cross-validation (CV) score
+Descriptive             Descriptive measures for functional data.
+FDR                     False Discorvery Rate (FDR)
+GCCV.S                  The generalized correlated cross-validation
+                        (GCCV) score.
+GCV.S                   The generalized correlated cross-validation
+                        (GCCV) score
+Kernel                  Symmetric Smoothing Kernels.
+Kernel.asymmetric       Asymmetric Smoothing Kernel
+Kernel.integrate        Integrate Smoothing Kernels.
+LMDC.select             Impact points selection of functional predictor
+                        and regression using local maxima distance
+                        correlation (LMDC)
+MCO                     Mithochondiral calcium overload (MCO) data set
+Outliers.fdata          outliers for functional dataset
+P.penalty               Penalty matrix for higher order differences
+PCvM.statistic          PCvM statistic for the Functional Linear Model
+                        with scalar response
+S.basis                 Smoothing matrix with roughness penalties by
+                        basis representation.
+S.np                    Smoothing matrix by nonparametric methods
+Var.y                   Sampling Variance estimates
+accuracy                Performance measures for regression and
+                        classification models
+aemet                   aemet data
+classif.DD              DD-Classifier Based on DD-plot
+classif.ML              Functional classification using ML algotithms
+classif.depth           Classifier from Functional Data
+classif.gkam            Classification Fitting Functional Generalized
+                        Kernel Additive Models
+classif.glm             Classification Fitting Functional Generalized
+                        Linear Models
+classif.gsam            Classification Fitting Functional Generalized
+                        Additive Models
+classif.kfold           Functional Classification usign k-fold CV
+classif.np              Kernel Classifier from Functional Data
+cond.F                  Conditional Distribution Function
+cond.mode               Conditional mode
+cond.quantile           Conditional quantile
+create.fdata.basis      Create Basis Set for Functional Data of fdata
+                        class
+dcor.xy                 Distance Correlation Statistic and t-Test
+depth.fdata             Computation of depth measures for functional
+                        data
+depth.mdata             Provides the depth measure for multivariate
+                        data
+depth.mfdata            Provides the depth measure for a list of
+                        p-functional data objects
+dev.S                   The deviance score
+dfv.test                Delsol, Ferraty and Vieu test for no
+                        functional-scalar interaction
+dis.cos.cor             Proximities between functional data
+fanova.RPm              Functional ANOVA with Random Project.
+fanova.hetero           ANOVA for heteroscedastic data
+fanova.onefactor        One-way anova model for functional data
+fda.usc-package         Functional Data Analysis and Utilities for
+                        Statistical Computing (fda.usc)
+fda.usc.internal        fda.usc internal functions
+fdata                   Converts raw data or other functional data
+                        classes into fdata class.
+fdata.bootstrap         Bootstrap samples of a functional statistic
+fdata.cen               Functional data centred (subtract the mean of
+                        each discretization point)
+fdata.deriv             Computes the derivative of functional data
+                        object.
+fdata.methods           fdata S3 Group Generic Functions
+fdata2fd                Converts fdata class object into fd class
+                        object
+fdata2pc                Principal components for functional data
+fdata2pls               Partial least squares components for functional
+                        data.
+flm.Ftest               F-test for the Functional Linear Model with
+                        scalar response
+flm.test                Goodness-of-fit test for the Functional Linear
+                        Model with scalar response
+fregre.basis            Functional Regression with scalar response
+                        using basis representation.
+fregre.basis.cv         Cross-validation Functional Regression with
+                        scalar response using basis representation.
+fregre.basis.fr         Functional Regression with functional response
+                        using basis representation.
+fregre.bootstrap        Bootstrap regression
+fregre.gkam             Fitting Functional Generalized Kernel Additive
+                        Models.
+fregre.glm              Fitting Functional Generalized Linear Models
+fregre.gls              Fit Functional Linear Model Using Generalized
+                        Least Squares
+fregre.gsam             Fitting Functional Generalized Spectral
+                        Additive Models
+fregre.gsam.vs          Variable Selection using Functional Additive
+                        Models
+fregre.igls             Fit of Functional Generalized Least Squares
+                        Model Iteratively
+fregre.lm               Fitting Functional Linear Models
+fregre.np               Functional regression with scalar response
+                        using non-parametric kernel estimation
+fregre.np.cv            Cross-validation functional regression with
+                        scalar response using kernel estimation.
+fregre.pc               Functional Regression with scalar response
+                        using Principal Components Analysis
+fregre.pc.cv            Functional penalized PC regression with scalar
+                        response using selection of number of PC
+                        components
+fregre.plm              Semi-functional partially linear model with
+                        scalar response.
+fregre.pls              Functional Penalized PLS regression with scalar
+                        response
+fregre.pls.cv           Functional penalized PLS regression with scalar
+                        response using selection of number of PLS
+                        components
+h.default               Calculation of the smoothing parameter (h) for
+                        a functional data
+influence.fregre.fd     Functional influence measures
+influence_quan          Quantile for influence measures
+inprod.fdata            Inner products of Functional Data Objects o
+                        class (fdata)
+int.simpson             Simpson integration
+kmeans.center.ini       K-Means Clustering for functional data
+ldata                   ldata class definition and utilities
+metric.DTW              DTW: Dynamic time warping
+metric.dist             Distance Matrix Computation
+metric.hausdorff        Compute the Hausdorff distances between two
+                        curves.
+metric.kl               Kullback-Leibler distance
+metric.ldata            Distance Matrix Computation for ldata and
+                        mfdata class object
+metric.lp               Approximates Lp-metric distances for functional
+                        data.
+na.omit.fdata           A wrapper for the na.omit and na.fail function
+                        for fdata object
+norm.fdata              Approximates Lp-norm for functional data.
+ops.fda.usc             ops.fda.usc Options Settings
+optim.basis             Select the number of basis using GCV method.
+optim.np                Smoothing of functional data using
+                        nonparametric kernel estimation
+phoneme                 phoneme data
+plot.fdata              Plot functional data: fdata class object
+poblenou                poblenou data
+predict.classif         Predicts from a fitted classif object.
+predict.classif.DD      Predicts from a fitted classif.DD object.
+predict.fregre.fd       Predict method for functional linear model
+                        (fregre.fd class)
+predict.fregre.fr       Predict method for functional response model
+predict.fregre.gkam     Predict method for functional linear model
+predict.fregre.gls      Predictions from a functional gls object
+r.ou                    Ornstein-Uhlenbeck process
+rcombfdata              Utils for generate functional data
+rdir.pc                 Data-driven sampling of random directions
+                        guided by sample of functional data
+rp.flm.statistic        Statistics for testing the functional linear
+                        model using random projections
+rp.flm.test             Goodness-of fit test for the functional linear
+                        model using random projections
+rproc2fdata             Simulate several random processes.
+rwild                   Wild bootstrap residuals
+semimetric.NPFDA        Proximities between functional data
+                        (semi-metrics)
+semimetric.basis        Proximities between functional data
+subset.fdata            Subsetting
+summary.classif         Summarizes information from kernel
+                        classification methods.
+summary.fdata.comp      Correlation for functional data by Principal
+                        Component Analysis
+summary.fregre.fd       Summarizes information from fregre.fd objects.
+summary.fregre.gkam     Summarizes information from fregre.gkam
+                        objects.
+tecator                 tecator data
+weights4class           Weighting tools

@@ -1,0 +1,52 @@
+
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> library(Ball)
+Warning message:
+package 'Ball' was built under R version 4.2.3 
+> library(R.matlab)
+R.matlab v3.7.0 (2022-08-25 21:52:34 UTC) successfully loaded. See ?R.matlab for help.
+
+Attaching package: 'R.matlab'
+
+The following objects are masked from 'package:base':
+
+    getOption, isOpen
+
+Warning message:
+package 'R.matlab' was built under R version 4.2.3 
+> Xk = readMat("./sz1_pre_fd.mat")
+> data = Xk$X
+> p = length(data)
+> CC = matrix(rep(0,p*p),p,p)
+> for (i in (1:(p-1))){
++   for(j in ((i+1):p)){
++     dx = fda.usc::metric.lp(data[[i]][[1]], lp = 0)
++     dy = fda.usc::metric.lp(data[[j]][[1]], lp = 0)
++     CC[i,j] = bcov.test(x=dx,y=dy,num.permutations=99,distance=TRUE)$p.value
++     CC[j,i] = CC[i,j]
++   }
++ }
+> writeMat("./pvalMatrix2.mat",pvalMatrix2=CC)
+> 
+> proc.time()
+   user  system elapsed 
+   5.87    0.17    7.79 
